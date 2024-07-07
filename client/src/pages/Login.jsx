@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Button, Container, Paper, TextField, Typography } from '@mui/material'
+import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from '@mui/material'
+import {CameraAlt} from '@mui/icons-material'
+import { VisuallyHiddenInput } from '../components/styles/StyledComponents'
 
 const Login = () => {
   const [isLogin, setLoginIn] = useState(true)
@@ -45,6 +47,31 @@ const Login = () => {
               width: "100%",
               marginTop: "1rem"
             }}>
+              
+              <Stack position={"relative"} width={"10rem"} margin={"auto"}>
+                <Avatar
+                  sx={{
+                    width: "10rem",
+                    height: "10rem",
+                    objectFit:"contain"
+                }}
+                />
+                <IconButton sx={{
+                  position: "absolute",
+                  bottom: "0",
+                  right: "0",
+                  color:"white",
+                  bgcolor: "rgba(0,0,0,0.5)",
+                  ":hover": {
+                  bgcolor: "rgba(0,0,0,0.7)",
+                  },
+                }}
+                  component="label"
+                >
+                  <CameraAlt />
+                  <VisuallyHiddenInput type='file'/>
+                </IconButton>
+              </Stack>
               
             <TextField
             required fullWidth label="Name" margin="normal"
